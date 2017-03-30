@@ -1,0 +1,18 @@
+---
+name: "RandomSpawn"
+author: "Sandertv"
+api: [2.1.0, 2.0.0, 3.0.0-ALPHA1, 3.0.0-ALPHA2, 3.0.0-ALPHA3, 3.0.0-ALPHA4]
+main: Sandertv\RandomSpawn\RandomSpawn
+version: 1.0
+
+commands:
+  randomspawnposition:
+    usage: "/randomspawnposition <ID>"
+    permission: "randomspawn.setposition"
+    aliases: ["rsp", "randomspawnpos", "rspawnpos", "randomsp", "randomspawn", "rssetpos", "randomspawnsetpos"]
+    description: "Set or modify one of the random spawn positions"
+permissions:
+  randomspawn.setposition:
+    default: op
+    description: "Allows access to the randomspawnposition command"
+...
