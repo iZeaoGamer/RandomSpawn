@@ -26,7 +26,10 @@ class RandomSpawn extends PluginBase implements Listener {
 	
 	public function onJoin(PlayerJoinEvent $event) {
 		$player = $event->getPlayer();
-		$randomSpawn = $this->locations[array_rand($this->locations)];
+		if(empty($this->locations["Spawns"])) {
+			return false;
+		}
+		$randomSpawn = $this->locations["Spawns"][array_rand($this->locations)];
 		$randomPosition = new Position($randomSpawn["x"], $randomSpawn["y"], $randomSpawn["z"], $this->getServer()->getLevelByName($randomSpawn["level"]));
 		$player->teleport($randomPosition);
 	}
