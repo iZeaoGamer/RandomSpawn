@@ -34,7 +34,7 @@ class RandomSpawn extends PluginBase implements Listener {
 		$player->teleport($randomPosition);
 	}
 	
-	public function onCommand(CommandSender $sender, Command $command, $label, array $args) {
+	public function onCommand(CommandSender $sender, Command $command, string $label, array $args): bool {
 		if(strtolower($command->getName()) === "randomspawnposition") {
 			if(!$sender->hasPermission("randomspawn.setposition")) {
 				$sender->sendMessage(TextFormat::RED . "You don't have permission to do that.");
